@@ -54,16 +54,16 @@ const App = () => {
       <div>
         <div id="text-area">
           <div id="text" className="blockquote">
-            {_.unescape(htmlDecode(quotes[quoteIndex].content.rendered))}
+            {htmlDecode(quotes[quoteIndex].content.rendered)}
           </div>
           <div id="author" className="blockquote blockquote-footer font-italic me-2">
-            {_.unescape(quotes[quoteIndex].title.rendered)}
+            {htmlDecode(quotes[quoteIndex].title.rendered)}
           </div>
         </div>
         <div id="button-area">
           <div className="d-flex">
             <Button
-              href={`https://twitter.com/intent/tweet?text=${_.unescape(htmlDecode(quotes[quoteIndex].content.rendered))}-${_.unescape(quotes[quoteIndex].title.rendered)}`}
+              href={`https://twitter.com/intent/tweet?text=${htmlDecode(quotes[quoteIndex].content.rendered)}-${htmlDecode(quotes[quoteIndex].title.rendered)}`}
               target="_blank"
               className="d-flex justify-content-center align-items-center me-2"
               style={{ backgroundColor: '#1DA1F2', borderColor: '#1DA1F2' }}
@@ -71,7 +71,7 @@ const App = () => {
               <FontAwesomeIcon icon={['fab', 'twitter']} className={`${style.BtnIcon}`} />
             </Button>
             <Button
-              href={`https://www.facebook.com/sharer/sharer.php?u=${window.location.href}&quote=${_.unescape(htmlDecode(quotes[quoteIndex].content.rendered))}-${_.unescape(quotes[quoteIndex].title.rendered)}`}
+              href={`https://www.facebook.com/sharer/sharer.php?u=${window.location.href}&quote=${htmlDecode(quotes[quoteIndex].content.rendered)}-${htmlDecode(quotes[quoteIndex].title.rendered)}`}
               target="_blank"
               className="d-flex justify-content-center align-items-center"
               style={{ backgroundColor: '#4267B2', borderColor: '#4267B2' }}
